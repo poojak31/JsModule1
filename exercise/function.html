@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function defination
+      function cal() {
+        document.writeln("running calculate bill");
+        const total = 500 * 3;
+        document.writeln(total);
+        return total;
+      }
+
+      const mytotal = cal(); //function call
+      document.writeln("my total bill = " + mytotal);
+
+      document.write(`my total bill = $${cal()}`);
+
+      /*.........function parameter and arguments........*/
+
+      function add(a, b) {
+        const addtn = a + b;
+        console.log("addition of 2 variable = " + addtn);
+        return addtn;
+      }
+      console.log(add(5, 4));
+
+      function fullname(first, last) {
+        this.first = first;
+        this.last = last;
+        const pname = first + last;
+        console.log("full name of person is " + pname);
+        return pname;
+      }
+
+      console.log(fullname("pooja", "kolape"));
+    </script>
+  </body>
+</html>
