@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*......object.....*/
+      const car = {
+        model_no: 101,
+        name: "swift"
+      };
+      console.log(car.name);
+
+      /*.......undefined.......*/
+      let pen;
+      console.log(pen); //output is undefined
+      pen = "cello";
+      console.log(pen);
+
+      /*.......null......*/
+      let person = {
+        name: "pooja",
+        last: "kolape",
+        mob: null
+      };
+      console.log("middle name is " + person.middle);
+      console.log("person mob is " + person.mob);
+
+      /*........boolean and equality........*/
+      let age = 25;
+      const ofage = age > 15;
+      console.log(ofage);
+
+      console.log(age === 25);
+      console.log(20 === 25);
+    </script>
+  </body>
+</html>
