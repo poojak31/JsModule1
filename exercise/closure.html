@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function bake() {
+        const outerbake = "i am outerbake";
+        function cake() {
+          const innercake = "i am innercake";
+
+          console.log(outerbake);
+          console.log(innercake);
+        }
+        return cake;
+      }
+
+      const cakefn = bake();
+      cakefn();
+
+      function game(gname) {
+        let score = 0;
+        return function win() {
+          score++;
+          return `your game name is ${gname} and score is ${score}`;
+        };
+      }
+      const chessgame = game("chess");
+      const ludogame = game("ludo");
+    </script>
+  </body>
+</html>

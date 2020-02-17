@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>hi i am pooja</p>
+      <h2>hello!!!</h2>
+
+      <img
+        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&psig=AOvVaw3l2gxPasU-k73H8oos585w&ust=1582026830567000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiI86vD2OcCFQAAAAAdAAAAABAD"
+      />
+      <h3 id="one">
+        I am heading tag 3
+        <span>i am span tag</span>
+      </h3>
+
+      <article class="item">
+        <h2>i am article</h2>
+        <p class="pizza">This is how many pizz i ate!</p>
+      </article>
+    </div>
+
+    <style>
+      h2,
+      span {
+        display: none;
+      }
+    </style>
+    <script>
+      const P = document.querySelector("p");
+      console.log(P);
+      const heading = document.querySelector("h3");
+      console.log(heading.textContent);
+      console.log(heading.innerText);
+      console.log(heading.innerHTML);
+      console.log(heading.outerHTML);
+
+      const pizzaList = document.querySelector(".pizza");
+      console.log(pizzaList.textContent);
+    </script>
+  </body>
+</html>

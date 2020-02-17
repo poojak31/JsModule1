@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = 10; //global scope
+      const b = "ball";
+      let c = 6;
+
+      function scope() {
+        const d = 4; //block scope or local scope
+        console.log(d);
+      }
+      console.log(a);
+      //console.log(d);
+
+      // let
+
+      let i;
+      if (1 === 1) {
+        i = true;
+        //console.log(i);
+      }
+      console.log(i);
+
+      //var
+
+      var j;
+      for (j = 0; j <= 10; j++) {
+        console.log(j);
+      }
+      //console.log(j);
+
+      //const
+      const dog = "snickers";
+
+      function hotdog(dog) {
+        console.log(dog);
+      }
+
+      function go() {
+        const dog = "sunny";
+        hotdog(`sunny`);
+      }
+      go();
+
+      //********Hoisting*****//
+
+      var x; //var keyword is hoisted
+      z = 20;
+      console.log(x);
+      console.log(z);
+      x = 10;
+
+      // k = 8;
+      // console.log(k);
+      // const k;     //let & const keyword not hoisted
+
+      hoist();
+      function hoist() {
+        console.log("hi");
+      }
+    </script>
+  </body>
+</html>
