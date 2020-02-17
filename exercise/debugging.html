@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "pooja", cool: true, country: "India" },
+        { name: "amruta", cool: false, country: "America" },
+        { name: "vivek", cool: true, country: "Landon" }
+      ];
+
+      console.table(people);
+
+      people.forEach((person, index) => {
+        // debugger;
+        console.log(person.name);
+      });
+
+      function debug(name) {
+        console.count(`running abc function`);
+        return `${name}`;
+      }
+    </script>
+  </body>
+</html>

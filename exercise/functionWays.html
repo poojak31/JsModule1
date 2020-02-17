@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="clickme">Click Me!!</button>
+
+    <script>
+      function abc(name) {
+        return `dr.${name}`;
+      }
+
+      //******anonymous function******//
+      //   function (sname){
+      //       return `${name}`;
+      //   }
+
+      //function expression
+      const xyz = function(fname) {
+        return `${fname}`;
+      };
+
+      function inches(cm) {
+        return cm * 2.36;
+      }
+
+      //returning an object
+
+      function book(bid, bname) {
+        const bk = {
+          name: `${bid} ${bname}`,
+          bcopy: 5
+        };
+        return bk;
+      }
+
+      //using fat arrow function
+      const book1 = (bid, bname) => ({ name: `${bid} ${bname}`, bcopy: 3 });
+
+      //IIFE- Immediately Involved function expression
+
+      (function() {
+        console.log("running in anonymous function");
+        return `u r cool`;
+      })();
+
+      //methods....
+      const meth = {
+        name: `pooja`,
+
+        //method
+        sayhi: function() {
+          console.log("hi pooja");
+        },
+
+        //short hand method
+        hi() {
+          console.log("hi everyone");
+        },
+
+        //Arrow function
+        school: () => {
+          console.log("this is school function");
+        }
+      };
+
+      //callback function
+      //click function
+      const button = document.querySelector(".clickme");
+
+      function good() {
+        console.log("good morning");
+      }
+
+      button.addEventListener("click", good);
+
+      //timer callback
+      setTimeout(meth.name, 1000);
+    </script>
+  </body>
+</html>

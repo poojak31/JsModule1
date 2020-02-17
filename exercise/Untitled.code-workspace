@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"path": "/Users/pooja/Documents/javascriptCourse1"
+	},
+	{
+		"name": "JsModule1",
+		"path": "/Users/pooja/Documents/JsModule1"
+	}
+],
+  "settings": {
+    "git.ignoreLimitWarning": true,
+    "liveServer.settings.multiRootWorkspaceName": "JsModule1"
+  }
+}
