@@ -8,6 +8,7 @@
   </head>
   <body>
     <script>
+      //closure example 1
       function bake() {
         const outerbake = "i am outerbake";
         function cake() {
@@ -22,6 +23,8 @@
       const cakefn = bake();
       cakefn();
 
+      //closure example 2
+
       function game(gname) {
         let score = 0;
         return function win() {
@@ -31,6 +34,19 @@
       }
       const chessgame = game("chess");
       const ludogame = game("ludo");
+
+      //closure example 1
+      var x = 10;
+      function k() {
+        var y = 20;
+        function l() {
+          var z = 25;
+          var add = x + y + z;
+          console.log(add);
+        }
+        l();
+      }
+      k();
     </script>
   </body>
 </html>

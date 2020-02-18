@@ -7,13 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
+    <div class="item">
       <p>hi i am pooja</p>
       <h2>hello!!!</h2>
-
-      <img
-        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&psig=AOvVaw3l2gxPasU-k73H8oos585w&ust=1582026830567000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiI86vD2OcCFQAAAAAdAAAAABAD"
-      />
+      <img src="https://picsum.photos/200" />
+    </div>
+    <div>
+      <img src="https://picsum.photos/200" />
       <h3 id="one">
         I am heading tag 3
         <span>i am span tag</span>
@@ -33,7 +33,9 @@
     </style>
     <script>
       const P = document.querySelector("p");
+      const imgs = document.querySelectorAll(".item img");
       console.log(P);
+      console.log(imgs);
       const heading = document.querySelector("h3");
       console.log(heading.textContent);
       console.log(heading.innerText);

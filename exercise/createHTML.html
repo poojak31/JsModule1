@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>hi i am p tag</p>
+      <img src="https://picsum.photos/200" />
+    </div>
+    <script>
+      const mypara = document.createElement("p");
+      mypara.textContent = "i am p";
+      mypara.classList.add("special");
+      console.log(mypara);
+
+      const myimg = document.createElement("img");
+      myimg.src = "https://picsum.photos/500";
+      myimg.alt = "nice photo";
+      console.log(myimg);
+
+      const mydiv = document.createElement("div");
+      mydiv.classList.add("wrapper");
+      console.log(mydiv);
+
+      document.body.appendChild(mydiv);
+      mydiv.appendChild(mypara);
+      mydiv.appendChild(myimg);
+
+      const heading = document.createElement("H2");
+      heading.textContent = "this is ur heading";
+      mydiv.appendChild(heading);
+
+      mydiv.insertAdjacentElement("beforebegin", heading);
+
+      const list = document.createElement("ul");
+      const li = document.createElement("li");
+      li.textContent = "three";
+      list.appendChild(li);
+
+      document.body.insertAdjacentElement("afterbegin", list);
+
+      const li1 = document.createElement("li");
+      li1.textContent = "one";
+      list.insertAdjacentElement("afterbegin", li1);
+
+      const li4 = li1.cloneNode();
+      li4.textContent = "four";
+      li.insertAdjacentElement("afterend", li4);
+
+      const li2 = li1.cloneNode();
+      li2.textContent = "two";
+      li.insertAdjacentElement("beforebegin", li2);
+    </script>
+  </body>
+</html>

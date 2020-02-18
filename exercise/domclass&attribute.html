@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img class="nice" src="https://picsum.photos/600" />
+    <div class="item">
+      <img class="custom" data-name="jkl" src="https://picsum.photos/200" />
+      <img data-name="sfd" src="https://picsum.photos/200" />
+      <img data-name="asw" src="https://picsum.photos/200" />
+    </div>
+
+    <h2>i am image</h2>
+
+    <style>
+      h2 span {
+        display: none;
+      }
+
+      img {
+        transition: all 0.2s;
+      }
+      .round {
+        border-radius: 50%;
+        transform: rotate(200deg);
+      }
+    </style>
+    <script>
+      const pic = document.querySelector(".nice");
+      pic.classList.add("open");
+      pic.classList.remove("open");
+      pic.classList.add("round");
+      pic.classList.toggle("round");
+
+      console.log(pic.classList);
+
+      function toggleRound() {
+        pic.classList.toggle("round");
+      }
+
+      pic.addEventListener("click", toggleRound);
+
+      pic.alt = "cute.pup"; //setter
+      console.log(pic.alt); //getter
+      console.log(pic.naturalwidth); //getter
+
+      pic.addEventListener("load", function() {
+        console.log(pic.naturalwidth); //getter
+
+        pic.setAttribute("alt", "really cute attribute");
+        console.log(pic.getAttribute("alt"));
+      });
+
+      const cust = document.querySelector(".custom");
+      console.log(cust.dataset);
+
+      cust.addEventListener("click", function() {
+        alert(`welcome ${cust.dataset.name}`);
+      });
+    </script>
+  </body>
+</html>

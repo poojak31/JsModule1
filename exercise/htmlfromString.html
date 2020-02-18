@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img class="nice" src="https://picsum.photos/600" />
+    <div class="item">
+      <img class="custom" data-name="jkl" src="https://picsum.photos/200" />
+      <img data-name="sfd" src="https://picsum.photos/200" />
+      <img data-name="asw" src="https://picsum.photos/200" />
+    </div>
+
+    <h2>i am image</h2>
+
+    <style>
+      h2 span {
+        display: none;
+      }
+
+      img {
+        transition: all 0.2s;
+      }
+      .round {
+        border-radius: 50%;
+        transform: rotate(200deg);
+      }
+    </style>
+    <script>
+      const item = document.querySelector(".item");
+
+      const width = 500;
+      const src = `https://picsum.photos/${width}`;
+      const desc = `cute pup <img onload ="alert('hacked')" src="https://picsum.photos/200">`;
+      const myhtml = `
+      <div className="wrapper">
+        <h2>cute ${desc}</h2>
+        <img src="${src}" alt="${desc}"/>
+        </div>
+      `;
+
+      item.innerHTML = myhtml;
+      console.log(item.innerHTML);
+
+      const myfragment = document
+        .createRange()
+        .createContextualFragment("myhtml");
+      console.log(myfragment.querySelector("img"));
+      console.log(myfragment);
+
+      console.log(item.children);
+      console.log(item.firstElementChild);
+    </script>
+  </body>
+</html>
