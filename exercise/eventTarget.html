@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Buy buttons</h2>
+    <button data-price="100" class="buy">buy item 1</button>
+    <button data-price="200" class="buy">buy item 2</button>
+    <button data-price="300" class="buy">buy item 3</button>
+    <button data-price="400" class="buy">buy item 4</button>
+    <button data-price="500" class="buy">buy item 5</button>
+    <button data-price="600" class="buy">buy item 6</button>
+    <button data-price="700" class="buy">buy item 7</button>
+    <button data-price="800" class="buy">buy item 8</button>
+    <button data-price="900" class="buy">buy item 9</button>
+    <button data-price="1000" class="buy">buy item 10</button>
+
+    <img class="photo" src="https://picsum.photos/200" ; />
+  </body>
+  <script>
+    const buybts = document.querySelectorAll("button.buy");
+    function handleEvent(event) {
+      console.log("u r buying it");
+      //console.log(event.target.dataset.price);
+      console.log(event.target);
+      console.log(event.currentTarget);
+      console.log(event.target === event.currentTarget);
+
+      //stop this event bubbling up
+      //event.stopPropagation();
+    }
+
+    buybts.forEach(function(button) {
+      button.addEventListener("click", handleEvent);
+    });
+
+    window.addEventListener(
+      "click",
+      function() {
+        console.log("u clicked on window");
+        //event.stopPropagation();
+      },
+
+      {
+        capture: true
+      }
+    );
+
+    const p1 = document.querySelector(".photo");
+
+    p1.addEventListener("mouseenter", function(e) {
+      console.log(e.currentTarget);
+    });
+  </script>
+</html>

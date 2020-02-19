@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="butts">click me!</button>
+    <button class="cool">click me also!</button>
+
+    <h2>Buy buttons</h2>
+    <button class="buy">buy item 1</button>
+    <button class="buy">buy item 1</button>
+    <button class="buy">buy item 2</button>
+    <button class="buy">buy item 3</button>
+    <button class="buy">buy item 4</button>
+    <button class="buy">buy item 5</button>
+    <button class="buy">buy item 6</button>
+    <button class="buy">buy item 7</button>
+    <button class="buy">buy item 8</button>
+    <button class="buy">buy item 9</button>
+    <button class="buy">buy item 10</button>
+
+    <script>
+      const bts = document.querySelector(".butts");
+      const coolbts = document.querySelector(".cool");
+
+      function abc() {
+        console.log("i am abc function");
+      }
+
+      const hi = () => console.log("hi everyone");
+
+      bts.addEventListener("click", abc);
+      //coolbts.addEventListener("click", abc);
+      coolbts.addEventListener("click", hi);
+
+      //bts.removeEventListener("click", abc);
+
+      //use for multiple lines
+      const buybts = document.querySelectorAll("button.buy");
+
+      //   function buyitem() {
+      //     console.log("buying item");
+      //   }
+
+      //   buybts.forEach(function(buybts1) {
+      //     console.log("binding the buy buttons");
+      //     buybts1.addEventListener("click", buyitem);
+      //   });
+      //or
+      //   function handleevent(buybts1) {
+      //     console.log("binding the buy buttons");
+      //     buybts1.addEventListener("click", buyitem);
+      //   }
+      //   buybts.forEach(handleevent);
+
+      //or
+      buybts.forEach(button => {
+        button.addEventListener("click", () => {
+          console.log("it's another type");
+        });
+      });
+    </script>
+  </body>
+</html>
