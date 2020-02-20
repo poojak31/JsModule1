@@ -17,30 +17,27 @@ else if(document.form1.no2.value == "" || document.form1.no2.value == null)
 if(oper=="add")
 {
   res= no1 + no2;
-     document.getElementById('result').innerHTML=res;
+     document.getElementById('result').innerHTML="the addition of " + no1 + " and "  + no2 + " is " + res;
      console.log("The addition of two numbers = " + res);
-     document.writeln("the addition of " + no1 + " and "  + no2 + " is " + res); 
+
 }
 if(oper=="subt")
 {
   res= no1 - no2 ;
-     document.getElementById('result').innerHTML=res;
+     document.getElementById('result').innerHTML="the subtraction of " + no1 + " and "  + no2 + " is " + res;
      console.log("The subtraction of two numbers = " + res);
-     document.writeln("the subtraction of " + no1 + " and "  + no2 + " is " + res); 
+     
 }
 if(oper=="mult")
 {
 res= no1 * no2;
-     document.getElementById('result').innerHTML=res;
+     document.getElementById('result').innerHTML="the multiplication of " + no1 + " and "  + no2 + " is " + res;
      console.log("The multiplication of two numbers = " + res);
-     document.writeln("the multiplication of " + no1 + " and "  + no2 + " is " + res); 
+     
 }
 if(oper=="mod")
    {
-     res=no1 % no2;
-     document.getElementById('result').innerHTML=res;
-     console.log("The modulus of two numbers = " + res);
-     document.writeln("the modulus of " + no1 + " and "  + no2 + " is " + res); 
+     modulus(no1,no2);
    }
 if(oper=="div")
 {
@@ -51,13 +48,26 @@ if(oper=="div")
   else
   {
    res= no1 / no2;
-     document.getElementById('result').innerHTML=res;
+     document.getElementById('result').innerHTML="the division of " + no1 + " and "  + no2 + " is " + res;
      console.log("The division of two numbers = " + res);
-     document.writeln("the division of " + no1 + " and "  + no2 + " is " + res); 
+    
 }
 }
   
 }
+
+function modulus(no1,no2)
+{
+    res=no1 % no2;
+     document.getElementById('result').innerHTML="the modulus of " + no1 + " and "  + no2 + " is " + res;
+     console.log("The modulus of two numbers = " + res);
+     
+}
+
+
+const butts=document.querySelector('.button');
+
+butts.addEventListener('click',opration);
 
 
   
