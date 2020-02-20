@@ -16,29 +16,25 @@ else if(document.form1.no2.value == "" || document.form1.no2.value == null)
 
 if(oper=="add")
 {
-  res= no1 + no2;
-     document.getElementById('result').innerHTML="the addition of " + no1 + " and "  + no2 + " is " + res;
+   res= no1 + no2;
+     document.getElementById('result').innerHTML=`the addition of ${no1} and   ${no2} is ${res}`;
      console.log("The addition of two numbers = " + res);
 
 }
 if(oper=="subt")
 {
-  res= no1 - no2 ;
+    res= no1 - no2 ;
      document.getElementById('result').innerHTML="the subtraction of " + no1 + " and "  + no2 + " is " + res;
      console.log("The subtraction of two numbers = " + res);
      
 }
 if(oper=="mult")
 {
-res= no1 * no2;
+    res= no1 * no2;
      document.getElementById('result').innerHTML="the multiplication of " + no1 + " and "  + no2 + " is " + res;
      console.log("The multiplication of two numbers = " + res);
      
 }
-if(oper=="mod")
-   {
-     modulus(no1,no2);
-   }
 if(oper=="div")
 {
   if(no2=='0')
@@ -51,23 +47,27 @@ if(oper=="div")
      document.getElementById('result').innerHTML="the division of " + no1 + " and "  + no2 + " is " + res;
      console.log("The division of two numbers = " + res);
     
+  }
 }
-}
-  
+   
+       if(oper=="mod")
+        {
+             modulus(no1,no2);
+        } 
 }
 
 function modulus(no1,no2)
 {
-    res=no1 % no2;
-     document.getElementById('result').innerHTML="the modulus of " + no1 + " and "  + no2 + " is " + res;
+    var res=no1 % no2;
+     document.getElementById('result').innerHTML=`the modulus of ${no1} and   ${no2} is ${res}`;
      console.log("The modulus of two numbers = " + res);
      
 }
 
 
-const butts=document.querySelector('.button');
+ const butts=document.querySelector('.button');
 
-butts.addEventListener('click',opration);
+ butts.addEventListener('click',opration);
 
 
   
