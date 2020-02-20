@@ -23,7 +23,7 @@ if(oper=="add")
 }
 if(oper=="subt")
 {
-  res= no1 - no2a ;
+  res= no1 - no2 ;
      document.getElementById('result').innerHTML=res;
      console.log("The subtraction of two numbers = " + res);
      document.writeln("the subtraction of " + no1 + " and "  + no2 + " is " + res); 
