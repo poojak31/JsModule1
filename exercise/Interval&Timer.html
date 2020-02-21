@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function buzzer() {
+        console.log("enggggg");
+      }
+      //   setTimeout(function() {
+      //     console.log("done");
+      //   }, 500);
+
+      console.log("starting");
+      setTimeout(buzzer, 1000);
+      console.log("finishing");
+
+      //   function SetImmediateInetrval(funcToRun, ms) {
+      //     funcToRun();
+
+      //     return setInterval(funcToRun, ms);
+      //   }
+      //   SetImmediateInetrval(buzzer, 1500);
+
+      //   function sayhi() {
+      //     console.log("heyy");
+      //   }
+      //   SetImmediateInetrval(sayhi, 200);
+
+      function destroy() {
+        document.body.innerHTML = `<p>destroy</p>`;
+      }
+
+      const bombTimer = setTimeout(destroy, 2000);
+
+      window.addEventListener("click", function() {
+        console.log("u clicked and saved the world");
+        clearTimeout(bombTimer); //stop the timer
+      });
+    </script>
+  </body>
+</html>

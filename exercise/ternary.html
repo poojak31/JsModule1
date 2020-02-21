@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const iscool = false;
+
+      if (!iscool) {
+        console.log("it is not cool");
+      }
+
+      //ternary
+
+      const count = 1;
+      //   let word;
+      //   if (count === 1) {
+      //     word = "item";
+      //   } else {
+      //     word = "items";
+      //   }
+
+      let word = count === 1 ? "item" : "items";
+
+      const sentence = `u have ${count} ${word} in your cart`;
+      console.log(sentence);
+
+      function ShowAdminBar() {
+        console.log("showing admin bar");
+      }
+
+      isAdmin = true;
+      isAdmin ? ShowAdminBar() : null;
+
+      function check1() {
+        console.log("runnig check1");
+        return true;
+      }
+      function check2() {
+        console.log("runnig check2");
+        return true;
+      }
+      function check3() {
+        console.log("runnig check3");
+        return false;
+      }
+
+      if (check1() && check2() && check3()) {
+        console.log("all checks passed");
+      } else {
+        console.log("all checks failed");
+      }
+    </script>
+  </body>
+</html>

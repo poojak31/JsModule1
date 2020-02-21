@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const age = 60;
+
+      if (age > 25) {
+        console.log("u r greater than 25");
+      } else if (age < 10) {
+        console.log("10 is less than 60");
+      } else if (age > 70) {
+        condole.log("u r seventy yr old");
+      }
+
+      function slugify(sentence, lowercase) {
+        let slug = sentence.replace(/\s/g, "-");
+
+        if (lowercase) {
+          return slug.toLowerCase();
+        }
+        return slug;
+      }
+
+      const name = "pooja";
+      const last = "kolape";
+
+      if (name === "puja" || (name === "pooja" && last === "kolape")) {
+        console.log("cool name!!!");
+      }
+
+      const fname = "vivek";
+      const isAwesomeName = "vivek".includes(fname);
+      if (isAwesomeName) {
+        console.log("super cool awesome name");
+      }
+
+      function NameIsAwesome(name) {
+        return "pooja".includes(name);
+      }
+
+      if (NameIsAwesome("pooja")) {
+        console.log("cool name pooja");
+      }
+
+      const dog = " ";
+      if (dog) {
+        console.log("u have dog");
+      } else {
+        console.log("u dont have dog");
+      }
+
+      const score = [1, 2];
+      if (score) {
+        console.log("u have score already");
+      } else {
+        console.log("u dont have score");
+      }
+
+      const values = [
+        [],
+        {},
+        10,
+        -1,
+        0,
+        "",
+        "full string",
+        " ",
+        undefined,
+        NaN,
+        null
+      ];
+
+      console.group("truthy or falsy");
+      values.forEach(value => {
+        if (value) {
+          console.log(value, "value is truthy");
+        } else {
+          console.log(value, "value is falsy");
+        }
+      });
+      console.groupEnd();
+    </script>
+  </body>
+</html>

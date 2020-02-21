@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <input type="text" name="first" value="pooja" />
+  <body>
+    <script src="https://unpkg.com/lodash"></script>
+    <script>
+      const person = {
+        age: 20,
+        name: "pooja",
+        propertyToCheck: "never",
+        color: "white",
+        iscool: true,
+        233: true,
+        gender: "female",
+        clothing: {
+          shirt: 5,
+          pant: 5
+        },
+        sayHello: function(greeting = "hey") {
+          return `${greeting} ${this.name}`;
+        }
+      };
+      person.job = "web developer";
+      person.age = 30;
+      console.log(person);
+
+      //   const propertyToCheck = prompt("what do u want to checked?");
+      //   console.log(propertyToCheck);
+      //   console.log(person[propertyToCheck]);
+
+      const nameInput = document.querySelector('[name="first"]');
+      const name = nameInput ? nameInput.value : "";
+      console.log(name);
+
+      //******object references vs values********
+
+      let name1 = "pooja";
+      let name2 = "pooja";
+
+      console.log(name1 === name2);
+      name1 = "vivek";
+      console.log(name1 === name2);
+      name1 = name2;
+      console.log(name1 === name2);
+      name2 = name1;
+      name2 = "Vicky";
+
+      const person1 = {
+        name: "ash",
+        last: "ram"
+      };
+
+      const person2 = {
+        name: "ash",
+        last: "ram"
+      };
+
+      // const person3 = person1;
+      //const person3 = { ...person1 }; //its spread opeartor use for copy of object person1 to person3
+      const person3 = _.cloneDeep(person1); //its also use for copy of object
+      console.log(person3);
+
+      const mall = {
+        toys: 5,
+        cloth: 3
+      };
+      const bakery = {
+        bread: 4,
+        cake: 9
+      };
+
+      const shop = {
+        ...mall,
+        ...bakery
+      };
+      console.log(shop);
+
+      function dostuff(data) {
+        data.tomatoes = 500;
+        console.log(data);
+      }
+      dostuff(shop);
+    </script>
+  </body>
+</html>
