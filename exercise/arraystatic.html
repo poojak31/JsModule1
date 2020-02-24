@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*****static methods****/
+      //Array.of()
+
+      console.log(Array.of("pooja", "vivek"));
+      console.log(Array.of(..."pooja"));
+
+      //Array.from()
+
+      function createrange(start, end) {
+        const range = Array.from({ length: end - start + 1 }, function(
+          item,
+          index
+        ) {
+          return index + start;
+        });
+        return range;
+      }
+      const myrange = createrange(2, 5);
+      console.log(myrange);
+
+      //check if th last array is created is rally an array with Array.isArray()
+      console.log(Array.isArray(myrange));
+
+      const stationary = {
+        pen: 10,
+        pencil: 5,
+        rubber: 3
+      };
+
+      //make three arrays with object.entries,object.keys,object.values
+
+      console.log(Object.values(stationary));
+      console.log(Object.entries(stationary));
+      console.log(Object.keys(stationary));
+
+      //print also forEach loop
+
+      Object.values(stationary).forEach(qty => {
+        console.log(qty);
+      });
+
+      /******instance methods******/
+      const buns = ["egg", "chicken", "fish"];
+      const toppings = [
+        "mushrooms",
+        "tomatoes",
+        "eggs",
+        "cheese",
+        "chilies",
+        "pickles"
+      ];
+
+      //join()
+      console.log(buns.join(" or "));
+
+      //split()
+      const foodstring = "hot dogs,hamburgers,sausages,pizza";
+      console.log(foodstring.split(","));
+
+      //pop()
+      const lastItem = toppings.pop();
+      console.log(lastItem);
+
+      //push()
+      toppings.push(lastItem);
+      console.log(toppings);
+
+      //shift()
+      const firstItem = toppings.shift();
+      console.log(firstItem);
+
+      //unshift()
+      toppings.unshift(firstItem);
+      console.log(toppings);
+
+      //copy of the toppings array with slice()
+
+      const toppingcopy = toppings.slice(0);
+      console.log(toppingcopy);
+
+      // copy array with spread operator
+      const spreadtopping = [...toppings];
+      console.log(spreadtopping);
+
+      //take out item 3 to 5 of ur toppings array with splice()
+      toppingcopy.splice(2, 4);
+      console.log(toppingcopy);
+
+      //find the index of particular element with indexof/lastindexod
+
+      const tomato = toppings.indexOf("tomatoes");
+      console.log(tomato);
+
+      //includes()
+      const isinToppings = toppings.includes("potato");
+      console.log(isinToppings);
+      //add it if it is not
+      if (!isinToppings) {
+        toppings.push("potato");
+      }
+      console.log(toppings);
+
+      //reverse()
+      const toppingReverse = [...toppings].reverse();
+      console.log(toppings);
+      console.log(toppingReverse);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const names = ["pooja", "vivek", "ash", "mahesh"];
+      console.log(names);
+      console.log(names.length);
+      console.log(names[1]);
+
+      names.push("kiran"); //push method used for add element to the end of array
+      console.log(names);
+
+      const names2 = [...names, "kishor"];
+      names2.unshift("gayatri"); //push method used for add element to the start of array
+      console.log(names2);
+
+      //mutation method-do the changed
+      const numbers = [1, 3, 5, 4, 9, 6];
+      // numbers.reverse();
+      const Numberreverse = [...numbers].reverse();
+      console.log(Numberreverse);
+      console.log(numbers);
+
+      //immutable -  do not changed
+      const numberslice = numbers.slice(2, 5);
+      console.log(numberslice);
+
+      const number1 = [8, 6, 2, 7, 3];
+      number1.splice(2, 2);
+      console.log(number1);
+
+      const bikes = ["honda", "suzuki", "FZ", "pulsar"];
+      const newbikes = [...bikes.slice(1, 2), "karizma", ...bikes.slice(3)];
+      console.log(newbikes);
+
+      const AshIndex = names.findIndex(name => name === "ash");
+      const newNameswithoutkiran = [
+        //get everything up to ash index
+        names.slice(0, AshIndex),
+        //everything after ash index
+        names.slice(AshIndex + 1)
+      ];
+
+      console.log(newNameswithoutkiran);
+      //console.log(kiranIndex);
+      //console.log(names[kiranIndex]);
+    </script>
+  </body>
+</html>

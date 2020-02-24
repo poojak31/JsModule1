@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const feedback = [
+        { comment: "i love burger", rating: 5 },
+        { comment: "i dont like dog", rating: 4 },
+        { comment: "horrible movie", rating: 3 }
+      ];
+
+      const stationary = {
+        pen: 10,
+        pencil: 5,
+        rubber: 3
+      };
+      const toppings = [
+        "mushrooms",
+        "tomatoes",
+        "eggs",
+        "cheese",
+        "chilies",
+        "pickles"
+      ];
+
+      const orderTotal = [52, 41, 2, 95, 45, 32];
+      //callback function
+      //   const findBurgerRating = singlefeedback =>
+      //     singlefeedback.comment.includes("burger");
+      //   const burgrating = feedback.find(findBurgerRating);
+
+      //OR
+      function findbyword(word) {
+        return function(singlefeedback) {
+          return singlefeedback.comment.includes(word);
+        };
+      }
+
+      //   const burgrating = feedback.find(findbyword("dog"));
+      //   console.log(burgrating);
+
+      //find all ratings that are above 3 with filter
+
+      function filterByRating(minRate) {
+        return function(singlefeedback) {
+          return singlefeedback.rating > minRate;
+        };
+      }
+      const review = feedback.filter(filterByRating(3));
+      console.table(review);
+
+      //find all rating that talk about a burger with filter
+      const burgrating = feedback.filter(findbyword("burger"));
+      console.table(burgrating);
+
+      //remove the 3 star rating
+      const removeRating = feedback.filter(single => single.rating !== 3);
+      console.table(removeRating);
+
+      //some()
+      const isThereEnoughOfAtLeastOneStationary = Object.values(
+        stationary
+      ).some(value => value >= 5);
+      console.log(isThereEnoughOfAtLeastOneStationary);
+
+      //every()
+      const isThereEnoughOfAteveryStationary = Object.values(stationary).every(
+        value => value >= 3
+      );
+      console.log(isThereEnoughOfAteveryStationary);
+
+      //sort toppings alphabetically with sort()
+
+      const numbers = [1, 5, 74, 100, 95, 600, 300, 85, 41];
+      const numberSorted = numbers.sort(function(first, second) {
+        return first - second;
+      });
+      console.log(numberSorted);
+      console.log(toppings.sort());
+
+      //sort ordertotal from expensive to least with sort
+      function numberSort(a, b) {
+        return a - b;
+      }
+      console.log(orderTotal.sort(numberSort));
+
+      //sort the stationary with sort()
+
+      const stationarySorted = Object.entries(stationary).sort(function(a, b) {
+        const aprice = a[1];
+        const bprice = b[1];
+        return aprice - bprice;
+      });
+      console.table(stationarySorted);
+    </script>
+  </body>
+</html>
