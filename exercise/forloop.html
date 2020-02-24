@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [25, 2, 74, 41, 96, 12, 5, 8, 52, 9, 15];
+      const book = {
+        page: 200,
+        writer: "A.K",
+        published: 2010
+      };
+      //for
+
+      for (let i = 0; i <= 20; i += 2) {
+        console.log(i);
+      }
+      console.log("*************");
+
+      for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+      }
+
+      //for of
+
+      // for (const num of numbers) {
+      //   console.log(num);
+      // }
+
+      //for in
+      for (const props in book) {
+        console.log(props);
+      }
+
+      //while loop
+      const cool = true;
+      while (cool === true) {
+        console.log("you are cool");
+      }
+    </script>
+  </body>
+</html>
