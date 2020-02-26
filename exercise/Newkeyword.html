@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="one">button 1</button>
+    <button class="two">button 2</button>
+
+    <script>
+      const myDate = new Date("2 / 12 / 1998");
+      console.dir(myDate);
+      console.log(myDate.getFullYear());
+
+      const names = new Array("pooja", "kolape");
+      const numbers = new Object({ name: "vivek" });
+      const span = document.createElement("span");
+
+      //   String.prototype.sarcastic = function() {
+      //     //console.log(this);
+      //     const sarcastic = this.split(" ")
+      //       .map((char, i) => {
+      //         if (i % 2) {
+      //           return char.toUpperCase();
+      //         } else {
+      //           return char.toLocaleUpperCase();
+      //         }
+      //       })
+      //       .join("");
+      //     return sarcastic;
+      //   };
+
+      function pizza(toppings = [], customer) {
+        console.log("making a pizza");
+        this.toppings = toppings;
+        this.customer = customer;
+        this.slicesS = 10;
+        // this.eat = function() {
+        //   if (this.slices > 0) {
+        //     this.slices = this.slices - 1;
+        //     console.log(`chomp you now have ${this.slice} left!`);
+        //   } else {
+        //     console.log(`sorry! No slices left!`);
+        //   }
+        // };
+      }
+      pizza.prototype.eat = function() {
+        if (this.slices > 0) {
+          this.slices = this.slices - 1;
+          console.log(`chomp you now have ${this.slices} left!`);
+        } else {
+          console.log(`sorry! No slices left!`);
+        }
+      };
+      const pepperoniPizza = new pizza(["pepperoni"], "wes bos");
+
+      console.log(pepperoniPizza);
+      console.log(pepperoniPizza.constructor);
+
+      const button1 = document.querySelector(".one");
+      const button2 = document.querySelector(".two");
+
+      function TellMeAboutTheFunction() {
+        console.log("outside", this);
+        setTimeout(() => {
+          console.log("inside", this);
+          this.textContent = "you clicked me!!";
+        }, 1000);
+      }
+
+      button1.addEventListener("click", TellMeAboutTheFunction);
+      button2.addEventListener("click", TellMeAboutTheFunction);
+    </script>
+  </body>
+</html>
