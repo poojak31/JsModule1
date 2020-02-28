@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function handleError(err) {
+        console.log("oh no!!");
+        console.log(err);
+      }
+      const endpoint = "https://api.github.com/users/wesbos";
+
+      const wesPromise = fetch(endpoint);
+      wesPromise
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          console.log(data);
+        })
+        .catch(handleError);
+
+      //   function fetchData() {
+      //     return fetch("https://api.github.com/users/wesbos").then(response =>
+      //       response.text().then(text => text.split(/\r|\n/))
+      //     );
+      //   }
+
+      //   fetchData().then(arr => console.log(arr));
+    </script>
+  </body>
+</html>

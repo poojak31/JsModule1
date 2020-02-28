@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .go {
+        margin: 5rem;
+        background: red;
+        padding: 5rem;
+        width: 25rem;
+        height: 25rem;
+        transition: all 0.2;
+      }
+      .go.circle {
+        border-radius: 50%;
+      }
+
+      .go.white {
+        background: white;
+      }
+      .go.purple {
+        background: purple;
+      }
+    </style>
+    <div class="wrapper">
+      <p>hey</p>
+    </div>
+    <div class="go">click me!</div>
+    <script>
+      function wait(ms = 0) {
+        return new Promise(function(resolve) {
+          setTimeout(resolve, ms);
+        });
+      }
+
+      wait(200).then(() => {
+        console.log("Done!");
+      });
+
+      const go = document.querySelector(".go");
+      go.addEventListener("click", function(e) {
+        const e1 = e.currentTarget;
+        e1.textContent = "Go!!";
+        setTimeout(function() {
+          e1.classList.add("circle");
+
+          setTimeout(function() {
+            e1.classList.add("white");
+
+            setTimeout(function() {
+              e1.classList.remove("circle");
+
+              setTimeout(function() {
+                e1.classList.remove("white");
+                e1.classList.add("purple");
+              }, 300);
+            }, 250);
+          }, 500);
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
